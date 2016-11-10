@@ -12,6 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Condition.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Location.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\LocationsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)GettingStarted.Xamarin" />
@@ -19,6 +20,5 @@
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Service\" />
     <Folder Include="$(MSBuildThisFileDirectory)View\" />
-    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\" />
   </ItemGroup>
 </Project>
