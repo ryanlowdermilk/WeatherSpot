@@ -10,7 +10,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\WeatherSpot.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Condition.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Location.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)GettingStarted.Xamarin" />
