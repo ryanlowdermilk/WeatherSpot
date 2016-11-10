@@ -2,7 +2,7 @@
 
 namespace WeatherSpot.Model
 {
-    public class WeatherSpot
+    public class Location
     {
         public int Version { get; set; }
         public string Key { get; set; }
