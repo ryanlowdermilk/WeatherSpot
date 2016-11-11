@@ -23,8 +23,4 @@ namespace WeatherSpot.ViewModel
         }
 
     }
-
-
-
-
 }
