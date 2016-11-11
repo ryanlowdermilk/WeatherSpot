@@ -1,10 +1,17 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using WeatherSpot.Model;
 
 namespace WeatherSpot.ViewModel
 {
     public class LocationsViewModel : INotifyPropertyChanged
     {
+        public LocationsViewModel()
+        {
+            Locations = new ObservableCollection<Location>();
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged([CallerMemberName] string name = null) =>
@@ -21,6 +28,8 @@ namespace WeatherSpot.ViewModel
                 OnPropertyChanged();
             }
         }
+
+        public ObservableCollection<Location> Locations { get; set; }
 
     }
 }
