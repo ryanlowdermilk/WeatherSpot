@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherSpot.View.LocationsPage">
+    <StackLayout Spacing="0">
+        <Button Text="Sync Locations" Command="{Binding GetLocationsCommand}"/>
+        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
+        <ListView x:Name="LocationsView" ItemsSource="{Binding Locations}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Label Text="{Binding EnglishName}"/>
+                            <Label Text="{Binding Region.EnglishName}" Grid.Column="1"/>
+                            <Label Text="{Binding TimeZone.Name}" Grid.Column="2"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

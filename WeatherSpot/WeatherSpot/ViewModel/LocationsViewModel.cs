@@ -17,6 +17,9 @@ namespace WeatherSpot.ViewModel
         public LocationsViewModel()
         {
             Locations = new ObservableCollection<Location>();
+            GetLocationsCommand = new Command(
+                    async () => await GetLocations(),
+                    () => !IsBusy);            
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -33,6 +36,7 @@ namespace WeatherSpot.ViewModel
             {
                 busy = value;
                 OnPropertyChanged();
+                GetLocationsCommand.ChangeCanExecute();
             }
         }
 
@@ -71,6 +75,8 @@ namespace WeatherSpot.ViewModel
             if (error != null)
                 await Application.Current.MainPage.DisplayAlert("Error!", error.Message, "OK");
         }
+
+        public Command GetLocationsCommand { get; set; }
 
     }
 }

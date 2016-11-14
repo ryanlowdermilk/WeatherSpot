@@ -13,12 +13,21 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\Condition.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Location.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\LocationsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\LocationsPage.xaml.cs">
+      <DependentUpon>LocationsPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)GettingStarted.Xamarin" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Service\" />
-    <Folder Include="$(MSBuildThisFileDirectory)View\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\LocationsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
