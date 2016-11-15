@@ -17,8 +17,7 @@ namespace WeatherSpot.View
 			InitializeComponent ();
 
             vm = new LocationsViewModel();
-            BindingContext = vm;
-            
+            BindingContext = vm;            
 		}
 	}
 }
