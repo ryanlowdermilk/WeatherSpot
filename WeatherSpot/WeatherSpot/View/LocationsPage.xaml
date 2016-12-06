@@ -15,7 +15,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid>
+                        <Grid Padding="10,5,0,0">
                             <StackLayout Spacing="0" Grid.Column="0">
                                 <Label Text="{Binding EnglishName}" FontSize="Small"/>
                                 <Label Text="{Binding Region.EnglishName}" FontSize="Micro" />
