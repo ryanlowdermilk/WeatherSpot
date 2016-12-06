@@ -2,6 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherSpot.View.LocationsPage" Title="WeatherSpot" BackgroundColor="#87A2BD">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0"
+                    Android="0"
+                    WinPhone="0"/>
+    </ContentPage.Padding>
     <StackLayout Spacing="0" BackgroundColor="#87A2BD">
         <Image Source="header.png"/>
         <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
