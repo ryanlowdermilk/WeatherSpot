@@ -1,22 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WeatherSpot.View.LocationsPage">
-    <StackLayout Spacing="0">
-        <Button Text="Sync Locations" Command="{Binding GetLocationsCommand}"/>
+             x:Class="WeatherSpot.View.LocationsPage" Title="WeatherSpot" BackgroundColor="#87A2BD">
+    <StackLayout Spacing="0" BackgroundColor="#87A2BD">
         <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
-        <ListView x:Name="LocationsView" ItemsSource="{Binding Locations}">
+        <ListView x:Name="LocationsView" ItemsSource="{Binding Locations}" SeparatorVisibility="None" BackgroundColor="#EFF2F7">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <Grid>
-                            <Label Text="{Binding EnglishName}"/>
-                            <Label Text="{Binding Region.EnglishName}" Grid.Column="1"/>
-                            <Label Text="{Binding TimeZone.Name}" Grid.Column="2"/>
+                            <StackLayout Spacing="0" Grid.Column="0">
+                                <Label Text="{Binding EnglishName}" FontSize="14"/>
+                                <Label Text="{Binding Region.EnglishName}" FontSize="10" />
+                                <StackLayout Orientation="Horizontal">
+                                    <BoxView HeightRequest="3" WidthRequest="{Binding NumberOfQueries}" Color="#3A96C4"  />
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Spacing="0" Grid.Column="1" HorizontalOptions="CenterAndExpand">
+                                <Image Source="http://images.intellicast.com/App_Images/32_white/wx_66.png"/>
+                                <Label Text="Super Sunny" FontSize="8"/>
+                            </StackLayout>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button Text="Sync Locations" Command="{Binding GetLocationsCommand}" />
     </StackLayout>
 </ContentPage>

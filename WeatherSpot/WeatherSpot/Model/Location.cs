@@ -19,6 +19,7 @@ namespace WeatherSpot.Model
         public bool IsAlias { get; set; }
         public List<SupplementalAdminArea> SupplementalAdminAreas { get; set; }
         public Condition Condition { get; set; }
+        public int NumberOfQueries { get; set; }
     }
 
     public class Region
