@@ -13,7 +13,7 @@ namespace WeatherSpot
         public App()
         {
             var content = new LocationsPage();
-            MainPage = new NavigationPage(content) { Title = "Test" };
+            MainPage = content;
         }
 
         protected override void OnStart()

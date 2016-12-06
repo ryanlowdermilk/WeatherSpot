@@ -57,9 +57,21 @@ namespace WeatherSpot.ViewModel
                 {
                     var json = await client.GetStringAsync("https://demo8782286.mockable.io/weatherSpotLocations/");
                     var locations = JsonConvert.DeserializeObject<List<Location>>(json);
+
+                    foreach (var location in locations)
+                    {
+                        var jsonWeatherCondition = await client.GetStringAsync($"http://apidev.accuweather.com/currentconditions/v1/{location.Key}.json?language=en&apikey=hoArfRosT1215");
+                        var weatherConditions = JsonConvert.DeserializeObject<List<WeatherCondition>>(jsonWeatherCondition);
+                        location.WeatherCondition = weatherConditions[0];
+                    }
+
                     Locations.Clear();
                     foreach (var item in locations)
+                    {
                         Locations.Add(item);
+                        Debug.WriteLine(item.WeatherCondition.WeatherIconUrl);
+                    }
+                        
                 }
             }
             catch (Exception ex)

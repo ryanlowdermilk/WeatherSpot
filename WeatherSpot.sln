@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.25807.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "WeatherSpot", "WeatherSpot\WeatherSpot\WeatherSpot.shproj", "{D0170400-9FF3-4F22-892D-1A1D8D4C0B86}"
 EndProject
@@ -133,10 +133,11 @@ Global
 		{F2EA6808-A6E5-438B-BB44-B5920E752691}.AppStore|iPhoneSimulator.Build.0 = AppStore|iPhoneSimulator
 		{F2EA6808-A6E5-438B-BB44-B5920E752691}.AppStore|x64.ActiveCfg = AppStore|iPhone
 		{F2EA6808-A6E5-438B-BB44-B5920E752691}.AppStore|x86.ActiveCfg = AppStore|iPhone
-		{F2EA6808-A6E5-438B-BB44-B5920E752691}.Debug|Any CPU.ActiveCfg = Debug|iPhone
+		{F2EA6808-A6E5-438B-BB44-B5920E752691}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{F2EA6808-A6E5-438B-BB44-B5920E752691}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
 		{F2EA6808-A6E5-438B-BB44-B5920E752691}.Debug|ARM.ActiveCfg = Debug|iPhone
-		{F2EA6808-A6E5-438B-BB44-B5920E752691}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{F2EA6808-A6E5-438B-BB44-B5920E752691}.Debug|iPhone.Build.0 = Debug|iPhone
+		{F2EA6808-A6E5-438B-BB44-B5920E752691}.Debug|iPhone.ActiveCfg = Debug|iPhoneSimulator
+		{F2EA6808-A6E5-438B-BB44-B5920E752691}.Debug|iPhone.Build.0 = Debug|iPhoneSimulator
 		{F2EA6808-A6E5-438B-BB44-B5920E752691}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{F2EA6808-A6E5-438B-BB44-B5920E752691}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{F2EA6808-A6E5-438B-BB44-B5920E752691}.Debug|x64.ActiveCfg = Debug|iPhone
@@ -186,11 +187,17 @@ Global
 		{D094D63B-A7DD-44D2-93B8-AF364B49108B}.AppStore|x86.Build.0 = Release|x86
 		{D094D63B-A7DD-44D2-93B8-AF364B49108B}.AppStore|x86.Deploy.0 = Release|x86
 		{D094D63B-A7DD-44D2-93B8-AF364B49108B}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{D094D63B-A7DD-44D2-93B8-AF364B49108B}.Debug|Any CPU.Build.0 = Debug|x86
+		{D094D63B-A7DD-44D2-93B8-AF364B49108B}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{D094D63B-A7DD-44D2-93B8-AF364B49108B}.Debug|ARM.ActiveCfg = Debug|ARM
 		{D094D63B-A7DD-44D2-93B8-AF364B49108B}.Debug|ARM.Build.0 = Debug|ARM
 		{D094D63B-A7DD-44D2-93B8-AF364B49108B}.Debug|ARM.Deploy.0 = Debug|ARM
 		{D094D63B-A7DD-44D2-93B8-AF364B49108B}.Debug|iPhone.ActiveCfg = Debug|x86
+		{D094D63B-A7DD-44D2-93B8-AF364B49108B}.Debug|iPhone.Build.0 = Debug|x86
+		{D094D63B-A7DD-44D2-93B8-AF364B49108B}.Debug|iPhone.Deploy.0 = Debug|x86
 		{D094D63B-A7DD-44D2-93B8-AF364B49108B}.Debug|iPhoneSimulator.ActiveCfg = Debug|x86
+		{D094D63B-A7DD-44D2-93B8-AF364B49108B}.Debug|iPhoneSimulator.Build.0 = Debug|x86
+		{D094D63B-A7DD-44D2-93B8-AF364B49108B}.Debug|iPhoneSimulator.Deploy.0 = Debug|x86
 		{D094D63B-A7DD-44D2-93B8-AF364B49108B}.Debug|x64.ActiveCfg = Debug|x64
 		{D094D63B-A7DD-44D2-93B8-AF364B49108B}.Debug|x64.Build.0 = Debug|x64
 		{D094D63B-A7DD-44D2-93B8-AF364B49108B}.Debug|x64.Deploy.0 = Debug|x64

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherSpot.View.LocationsPage" Title="WeatherSpot" BackgroundColor="#87A2BD">
     <StackLayout Spacing="0" BackgroundColor="#87A2BD">
+        <Image Source="header.png"/>
         <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
         <ListView x:Name="LocationsView" ItemsSource="{Binding Locations}" SeparatorVisibility="None" BackgroundColor="#EFF2F7">
             <ListView.ItemTemplate>
@@ -10,15 +11,15 @@
                     <ViewCell>
                         <Grid>
                             <StackLayout Spacing="0" Grid.Column="0">
-                                <Label Text="{Binding EnglishName}" FontSize="14"/>
-                                <Label Text="{Binding Region.EnglishName}" FontSize="10" />
-                                <StackLayout Orientation="Horizontal">
-                                    <BoxView HeightRequest="3" WidthRequest="{Binding NumberOfQueries}" Color="#3A96C4"  />
-                                </StackLayout>
+                                <Label Text="{Binding EnglishName}" FontSize="Small"/>
+                                <Label Text="{Binding Region.EnglishName}" FontSize="Micro" />
                             </StackLayout>
-                            <StackLayout Spacing="0" Grid.Column="1" HorizontalOptions="CenterAndExpand">
-                                <Image Source="http://images.intellicast.com/App_Images/32_white/wx_66.png"/>
-                                <Label Text="Super Sunny" FontSize="8"/>
+                            <StackLayout Spacing="0" Grid.Column="1">
+                                <Image Source="{Binding WeatherCondition.WeatherIconUrl}" HorizontalOptions="Center"/>
+                                <Label Text="{Binding WeatherCondition.WeatherText}" FontSize="Micro" HorizontalOptions="Center"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <BoxView HeightRequest="3" WidthRequest="{Binding NumberOfQueries}" Color="#3A96C4" VerticalOptions="End" />
                             </StackLayout>
                         </Grid>
                     </ViewCell>

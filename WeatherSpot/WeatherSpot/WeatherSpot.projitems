@@ -10,7 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\Condition.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\WeatherCondition.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Location.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\LocationsViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\LocationDetailsPage.xaml.cs">
@@ -36,10 +36,5 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)header.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 </Project>
