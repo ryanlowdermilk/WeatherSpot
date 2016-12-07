@@ -2,5 +2,5 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherSpot.View.LocationDetailsPage">
-	<Label Text="Test" VerticalOptions="Center" HorizontalOptions="Center" />
+	<Label Text="{Binding EnglishName}" VerticalOptions="Center" HorizontalOptions="Center" />
 </ContentPage>
