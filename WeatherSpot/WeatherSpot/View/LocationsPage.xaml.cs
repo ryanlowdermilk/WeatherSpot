@@ -21,10 +21,10 @@ namespace WeatherSpot.View
             vm = new LocationsViewModel();
             BindingContext = vm;
 
-            LocationsView.ItemSelected += LocationsView_ItemSelected;        
+            LocationsListView.ItemSelected += LocationsListView_ItemSelected;        
 		}
 
-        private async void LocationsView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void LocationsListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var location = e.SelectedItem as Location;
 
@@ -33,7 +33,7 @@ namespace WeatherSpot.View
 
             await Navigation.PushAsync(new LocationDetailsPage(location));
 
-            e.SelectedItem == null;
+            LocationsListView.SelectedItem = null;
         }
     }
 }

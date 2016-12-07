@@ -11,7 +11,7 @@
     <StackLayout Spacing="0" BackgroundColor="#87A2BD">
         <Image Source="header.png"/>
         <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
-        <ListView x:Name="LocationsView" ItemsSource="{Binding Locations}" SeparatorVisibility="None" BackgroundColor="#EFF2F7">
+        <ListView x:Name="LocationsListView" ItemsSource="{Binding Locations}" SeparatorVisibility="None" BackgroundColor="#EFF2F7">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

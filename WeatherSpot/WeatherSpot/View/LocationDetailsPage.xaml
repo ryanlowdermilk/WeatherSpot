@@ -2,5 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherSpot.View.LocationDetailsPage">
-	<Label Text="{Binding EnglishName}" VerticalOptions="Center" HorizontalOptions="Center" />
+    <StackLayout>
+    <Label Text="{Binding EnglishName}" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" />
+        <ListView ItemsSource="{Binding Tweets}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding text}"></Label>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

@@ -20,6 +20,7 @@ namespace WeatherSpot.Model
         public List<SupplementalAdminArea> SupplementalAdminAreas { get; set; }
         public WeatherCondition WeatherCondition { get; set; }
         public int NumberOfQueries { get; set; }
+        public List<Tweet> Tweets { get; set; }
     }
 
     public class Region
