@@ -55,7 +55,7 @@ namespace WeatherSpot.ViewModel
 
                 using (var client = new HttpClient())
                 {
-                    var json = await client.GetStringAsync("https://demo8782286.mockable.io/weatherSpotLocations/");
+                    var json = await client.GetStringAsync("https://demo8782286.mockable.io/locations/");
                     var locations = JsonConvert.DeserializeObject<List<Location>>(json);
 
                     foreach (var location in locations)

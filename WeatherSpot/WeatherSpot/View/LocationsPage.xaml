@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App14.View.LocationsPage" BackgroundColor="#87A2BD">
+             x:Class="WeatherSpot.View.LocationsPage" BackgroundColor="#87A2BD">
   <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness"
                 iOS="0,20,0,0"
@@ -11,7 +11,8 @@
   <StackLayout>
     <Image Source="header.png" HorizontalOptions="Center"/>
     <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
-    <ListView ItemsSource="{Binding Locations}" SeparatorVisibility="None" BackgroundColor="#EFF2F7">
+    <ListView x:Name="LocationsListView" ItemsSource="{Binding Locations}" SeparatorVisibility="None" BackgroundColor="#EFF2F7"
+              IsPullToRefreshEnabled="True" RefreshCommand="{Binding GetLocationsCommand}" IsRefreshing="{Binding IsBusy,Mode=OneWay}">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
