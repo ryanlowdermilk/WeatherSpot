@@ -18,8 +18,13 @@ namespace WeatherSpot.ViewModel
         {
             this.Location = location;
             Tweets = new ObservableCollection<Status>();
-            Task t = GetTweets();
+            GetTweetsCommand = new Command(
+                async () => await GetTweets(),
+                () => !IsBusy);
+            GetTweetsCommand.Execute(this);            
         }
+
+        public Command GetTweetsCommand { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -35,6 +40,7 @@ namespace WeatherSpot.ViewModel
             {
                 busy = value;
                 OnPropertyChanged();
+                GetTweetsCommand.ChangeCanExecute();
             }
         }
 
@@ -44,16 +50,21 @@ namespace WeatherSpot.ViewModel
 
         private async Task GetTweets()
         {
-            IsBusy = true;
+            if (IsBusy)
+                return;
+
             Exception error = null;
 
             try
             {
+                IsBusy = true;
+
                 using (var client = new HttpClient())
                 {
                     var json = await client.GetStringAsync("http://demo8782286.mockable.io/tweets/");
                     var tweets = JsonConvert.DeserializeObject<List<Tweet>>(json);
 
+                    Tweets.Clear();
                     foreach (var tweet in tweets[0].statuses)
                         Tweets.Add(tweet);
                 }
