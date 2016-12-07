@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using WeatherSpot.Model;
+using Xamarin.Forms;
 
 namespace WeatherSpot.ViewModel
 {
@@ -41,8 +42,11 @@ namespace WeatherSpot.ViewModel
 
         public ObservableCollection<Status> Tweets { get; set; }
 
-        private async Task<bool> GetTweets()
+        private async Task GetTweets()
         {
+            IsBusy = true;
+            Exception error = null;
+
             try
             {
                 using (var client = new HttpClient())
@@ -56,9 +60,16 @@ namespace WeatherSpot.ViewModel
             }
             catch (Exception ex)
             {
-                var message = ex.Message;                
+                error = ex;
             }
-            return true;
+            finally
+            {
+                IsBusy = false;
+            }
+
+            if (error != null)
+                await Application.Current.MainPage.DisplayAlert("Error!", error.Message, "OK");
+
         }
     }
 }
