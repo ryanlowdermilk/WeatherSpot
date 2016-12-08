@@ -22,8 +22,8 @@
                 <RowDefinition Height="3"/>
               </Grid.RowDefinitions>
               <StackLayout Spacing="0" Grid.Column="0">
-                <Label Text="{Binding EnglishName}" Font="Medium" />
-                <Label Text="{Binding Region.EnglishName}" Font="Small"/>
+                <Label Text="{Binding EnglishName}" FontSize="Medium" />
+                <Label Text="{Binding Region.EnglishName}" FontSize="Small"/>
               </StackLayout>
               <StackLayout Spacing="0" Grid.Column="1">
                 <Image Source="{Binding WeatherCondition.WeatherIconUrl}" HorizontalOptions="Center"/>
