@@ -130,7 +130,9 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\header.png" />
+    <AndroidResource Include="Resources\Drawable\weatherspot_header.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="..\WeatherSpot\WeatherSpot.projitems" Label="Shared" Condition="Exists('..\WeatherSpot\WeatherSpot.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
