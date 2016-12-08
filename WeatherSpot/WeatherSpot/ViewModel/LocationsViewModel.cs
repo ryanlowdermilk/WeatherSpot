@@ -67,11 +67,7 @@ namespace WeatherSpot.ViewModel
 
                     Locations.Clear();
                     foreach (var item in locations)
-                    {
                         Locations.Add(item);
-                        Debug.WriteLine(item.WeatherCondition.WeatherIconUrl);
-                    }
-                        
                 }
             }
             catch (Exception ex)
