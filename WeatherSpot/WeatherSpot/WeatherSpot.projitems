@@ -15,6 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\Location.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\LocationDetailsViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\LocationsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ViewModelBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\LocationDetailsPage.xaml.cs">
       <DependentUpon>LocationDetailsPage.xaml</DependentUpon>
       <SubType>Code</SubType>

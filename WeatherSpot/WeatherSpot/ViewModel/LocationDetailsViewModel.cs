@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace WeatherSpot.ViewModel
 {
-    public class LocationDetailsViewModel : INotifyPropertyChanged
+    public class LocationDetailsViewModel : ViewModelBase
     {
         public LocationDetailsViewModel(Location location)
         {
@@ -26,11 +26,6 @@ namespace WeatherSpot.ViewModel
 
         public Command GetTweetsCommand { get; set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void OnPropertyChanged([CallerMemberName] string name = null) =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-
         private bool busy;
 
         public bool IsBusy
@@ -38,8 +33,7 @@ namespace WeatherSpot.ViewModel
             get { return busy; }
             set
             {
-                busy = value;
-                OnPropertyChanged();
+                SetProperty(ref busy, value);
                 GetTweetsCommand.ChangeCanExecute();
             }
         }
