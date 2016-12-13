@@ -1,14 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:WeatherSpot.ViewModel"
              x:Class="WeatherSpot.View.LocationsPage" BackgroundColor="#87A2BD">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:LocationsViewModel x:Key="viewModel" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness"
                 iOS="0,20,0,0"
                 Android="0"
                 WinPhone="0"/>
     </ContentPage.Padding>
-    <StackLayout>
+    <StackLayout BindingContext="{StaticResource viewModel}">
         <Image Margin="5,0,5,0" Source="weatherspot_header.png" HorizontalOptions="Center"/>
         <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
         <ListView x:Name="LocationsListView" ItemsSource="{Binding Locations}" SeparatorVisibility="None" BackgroundColor="#EFF2F7"
