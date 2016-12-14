@@ -1,6 +1,4 @@
 ﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using WeatherSpot.Model;
 using System.Net.Http;
@@ -10,6 +8,7 @@ using System;
 using Xamarin.Forms;
 using System.Diagnostics;
 
+
 namespace WeatherSpot.ViewModel
 {
     public class LocationsViewModel : ViewModelBase
@@ -18,8 +17,8 @@ namespace WeatherSpot.ViewModel
         {
             Locations = new ObservableCollection<Location>();
             GetLocationsCommand = new Command(
-                    async () => await GetLocations(),
-                    () => !IsBusy);            
+                async () => await GetLocations(),
+                () => !IsBusy);
         }
 
         private bool busy;
@@ -27,7 +26,7 @@ namespace WeatherSpot.ViewModel
         public bool IsBusy
         {
             get { return busy; }
-            set
+            private set
             {
                 SetProperty(ref busy, value);
                 GetLocationsCommand.ChangeCanExecute();
@@ -74,11 +73,13 @@ namespace WeatherSpot.ViewModel
                 IsBusy = false;
             }
 
+            /*
             if (error != null)
                 await Application.Current.MainPage.DisplayAlert("Error!", error.Message, "OK");
+            */
         }
 
-        public Command GetLocationsCommand { get; set; }
+        public Command GetLocationsCommand { get; private set; }
 
     }
 }
