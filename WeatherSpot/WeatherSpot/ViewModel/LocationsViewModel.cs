@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System;
 using Xamarin.Forms;
 using System.Diagnostics;
-
+using System.Windows.Input;
 
 namespace WeatherSpot.ViewModel
 {
@@ -29,7 +29,7 @@ namespace WeatherSpot.ViewModel
             private set
             {
                 SetProperty(ref busy, value);
-                GetLocationsCommand.ChangeCanExecute();
+                ((Command)GetLocationsCommand).ChangeCanExecute();
             }
         }
 
@@ -79,7 +79,7 @@ namespace WeatherSpot.ViewModel
             */
         }
 
-        public Command GetLocationsCommand { get; private set; }
+        public ICommand GetLocationsCommand { get; private set; }
 
     }
 }
