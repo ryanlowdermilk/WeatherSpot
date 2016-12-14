@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using WeatherSpot.Model;
 using Xamarin.Forms;
 
@@ -24,23 +25,23 @@ namespace WeatherSpot.ViewModel
             GetTweetsCommand.Execute(this);            
         }
 
-        public Command GetTweetsCommand { get; set; }
+        public ICommand GetTweetsCommand { get; private set; }
 
         private bool busy;
 
         public bool IsBusy
         {
             get { return busy; }
-            set
+            private set
             {
                 SetProperty(ref busy, value);
-                GetTweetsCommand.ChangeCanExecute();
+                ((Command)GetTweetsCommand).ChangeCanExecute();
             }
         }
 
         public Location Location { get; set; }
 
-        public ObservableCollection<Status> Tweets { get; set; }
+        public ObservableCollection<Status> Tweets { get; private set; }
 
         private async Task GetTweets()
         {
