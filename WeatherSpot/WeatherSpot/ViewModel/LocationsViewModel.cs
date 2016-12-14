@@ -33,7 +33,7 @@ namespace WeatherSpot.ViewModel
             }
         }
 
-        public ObservableCollection<Location> Locations { get; set; }
+        public ObservableCollection<Location> Locations { get; private set; }
 
         private async Task GetLocations()
         {
