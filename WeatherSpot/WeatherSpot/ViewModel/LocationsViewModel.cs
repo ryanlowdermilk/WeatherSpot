@@ -12,7 +12,7 @@ using System.Diagnostics;
 
 namespace WeatherSpot.ViewModel
 {
-    public class LocationsViewModel : INotifyPropertyChanged
+    public class LocationsViewModel : ViewModelBase
     {
         public LocationsViewModel()
         {
@@ -22,11 +22,6 @@ namespace WeatherSpot.ViewModel
                     () => !IsBusy);            
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnPropertyChanged([CallerMemberName] string name = null) =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-
         private bool busy;
 
         public bool IsBusy
@@ -34,8 +29,7 @@ namespace WeatherSpot.ViewModel
             get { return busy; }
             set
             {
-                busy = value;
-                OnPropertyChanged();
+                SetProperty(ref busy, value);
                 GetLocationsCommand.ChangeCanExecute();
             }
         }
